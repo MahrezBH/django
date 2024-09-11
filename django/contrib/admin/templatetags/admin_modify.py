@@ -70,8 +70,8 @@ def submit_row(context):
     show_save_and_add_another = context.get("show_save_and_add_another", True)
     show_save_and_continue = context.get("show_save_and_continue", True)
     has_add_permission = context["has_add_permission"]
-    has_change_permission = context["has_change_permission"]
-    has_view_permission = context["has_view_permission"]
+    has_change_permission = context.get("has_change_permission", True)
+    has_view_permission = context.get("has_view_permission", True)
     has_editable_inline_admin_formsets = context["has_editable_inline_admin_formsets"]
     can_save = (
         (has_change_permission and change)
